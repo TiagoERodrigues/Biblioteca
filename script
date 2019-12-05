@@ -1,0 +1,79 @@
+
+##############################
+# Populando o Banco de Dados #
+##############################
+
+
+INSERT INTO `Mercearia`.`Endereco` (`id`, `rua`, `bairro`, `cidade`, `estado`, `complemento`)
+VALUES ('', 'Jairo peixoto', 'Santa Aparecida', 'Divinopolis', 'Mg', 'casa');
+INSERT INTO `Mercearia`.`Endereco` (`rua`, `bairro`, `cidade`, `estado`, `complemento`)
+VALUES ('Francisco Rodrigues Junior', 'Santa Clara', 'Uberlandia', 'Mg', 'casa');
+INSERT INTO `Mercearia`.`Endereco` (`rua`, `bairro`, `cidade`, `estado`, `complemento`)
+VALUES ('Santa Maria ', 'Boa Vista', 'Caldas Novas', 'Mg', 'apartamento');
+INSERT INTO `Mercearia`.`Endereco` (`rua`, `bairro`, `cidade`, `estado`, `complemento`)
+VALUES ('José Bonifácio', 'Santo Antonio', 'Formiga', 'Mg', 'condominio');
+INSERT INTO `Mercearia`.`Endereco` (`rua`, `bairro`, `cidade`, `estado`, `complemento`)
+VALUES ('Treze De Maio', 'Santa Rita', 'Lagoa da Prata', 'Mg', 'casa');
+
+
+INSERT INTO `Mercearia`.`Cliente` (`id`, `nome`, `cpf`, `data_nasc`, `Endereco_id`)
+VALUES ('1', 'Fernando', '111.222.333-44', '1999-12-12', '1');
+INSERT INTO `Mercearia`.`Cliente` (`id`, `nome`, `cpf`, `data_nasc`, `Endereco_id`)
+VALUES ('2', 'Gabriel', '121.222.333-44', '1997-11-15', '2');
+INSERT INTO `Mercearia`.`Cliente` (`id`, `nome`, `cpf`, `data_nasc`, `Endereco_id`)
+VALUES ('3', 'Ana Clara', '111.232.333-44', '1990-09-09', '3');
+INSERT INTO `Mercearia`.`Cliente` (`id`, `nome`, `cpf`, `data_nasc`, `Endereco_id`)
+VALUES ('4', 'Renata', '113.444.555-77', '1995-07-04', '4');
+INSERT INTO `Mercearia`.`Cliente` (`id`, `nome`, `cpf`, `data_nasc`, `Endereco_id`)
+VALUES ('5', 'Natalia', '112.554.677-88', '1994-03-14', '5');
+
+
+INSERT INTO `Mercearia`.`Tipo_Produto` (`tipo`, `descricao`)
+VALUES ('Alimento', 'Produtos comestiveis bolachas, biscoitos, pães, bolos, etc.');
+INSERT INTO `Mercearia`.`Tipo_Produto` (`tipo`, `descricao`)
+VALUES ('Produto de Limpeza', 'Detergentes, Sabão em pó, Desinfetantes, etc.');
+INSERT INTO `Mercearia`.`Tipo_Produto` (`tipo`, `descricao`)
+VALUES ('Bebidas', 'Sucos, Refrigerantes, Bebidas Alcoolicas, etc.');
+INSERT INTO `Mercearia`.`Tipo_Produto` (`tipo`, `descricao`)
+VALUES ('Utensilios', 'Vasilhas, Copos, etc.');
+INSERT INTO `Mercearia`.`Tipo_Produto` (`tipo`, `descricao`)
+VALUES ('Higiene Pessoal', 'Pasta dental, Shampoo, Sabonete, etc.');
+
+
+INSERT INTO `Mercearia`.`Produto` (`id`, `nome`, `lote`, `preco`, `quantidade`, `Tipo_Produto_id`)
+VALUES ('', 'Arroz', '0000001', '15', '20', '1');
+INSERT INTO `Mercearia`.`Produto` (`id`, `nome`, `lote`, `preco`, `quantidade`, `Tipo_Produto_id`)
+VALUES ('', 'Suco del vale', '000230', '5.40', '15', '3');
+INSERT INTO `Mercearia`.`Produto` (`id`, `nome`, `lote`, `preco`, `quantidade`, `Tipo_Produto_id`)
+VALUES ('', 'Detergente Ype', '0003500', '4.75', '30', '2');
+INSERT INTO `Mercearia`.`Produto` (`id`, `nome`, `lote`, `preco`, `quantidade`, `Tipo_Produto_id`)
+VALUES ('', 'Copo Americano', '00002340', '6.99', '11', '4');
+INSERT INTO `Mercearia`.`Produto` (`id`, `nome`, `lote`, `preco`, `quantidade`, `Tipo_Produto_id`)
+VALUES ('', 'Shampoo Seda', '232004300', '8.90', '20', '5');
+
+
+INSERT INTO `Mercearia`.`Venda` (`id`, `data`, `valor_final`)
+VALUES ('', '2019-05-08', '30');
+INSERT INTO `Mercearia`.`Venda` (`id`, `data`, `valor_final`)
+VALUES ('', '2019-08-08', '6.99');
+INSERT INTO `Mercearia`.`Venda` (`id`, `data`, `valor_final`)
+VALUES ('', '2019-04-15', '10.15');
+INSERT INTO `Mercearia`.`Venda` (`id`, `data`, `valor_final`)
+VALUES ('', '2019-01-10', '8.99');
+INSERT INTO `Mercearia`.`Venda` (`id`, `data`, `valor_final`)
+VALUES ('', '2019-11-11', '15');
+
+
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('1', '1', '30', '2', '1');
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('2', '4', '6.99', '1', '2');
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('3', '2', '5.40', '1', '3');
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('3', '3', '4.75', '1', '3');
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('4', '5', '8.99', '1', '4');
+INSERT INTO `Mercearia`.`item_Venda` (`Cliente_id`, `Produto_id`, `valor_total`, `quantidade_item`, `Venda_id`)
+VALUES ('5', '1', '15', '1', '5');
+

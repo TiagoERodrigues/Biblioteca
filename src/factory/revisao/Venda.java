@@ -5,17 +5,11 @@ public class Venda{
 
 	private int id;
 	private Cliente cliente;
-	private Map<String, Item> item;
-	
-	public Venda(int id, Cliente cliente, Map<String, Item> item) {
+
+	public Venda(int id, Cliente cliente) {
 		super();
 		this.id = id;
 		this.cliente = cliente;
-		this.item = item;
-	}
-	
-	public void inserirItem(String codigo, Item item){
-		
 		
 		
 	}

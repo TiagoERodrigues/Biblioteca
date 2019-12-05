@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
 
-import com.sun.org.apache.xpath.internal.objects.XBoolean;
-import org.*;
-import com.mysql.jdbc.Driver;
-
 public class BancoDados {
 
 
@@ -15,26 +11,17 @@ public class BancoDados {
     public String MotDePasse;
     private boolean Logged = false;
 
-    public void StartBdd() throws SQLException, ClassNotFoundException {
+    public Connection StartBdd() throws SQLException, ClassNotFoundException {
 
-        String driverName = "com.mysql.jdbc.Driver";
-        Class.forName(driverName); // here is the ClassNotFoundException
+        try {
+            Class.forName("org.gjt.mm.mysql.jdbc.Driver");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/Mercearia?useTimezone=true&serverTimezone=UTC", "root", "");
 
-        String serverName = "localhost:3306";
-        String mydatabase = "root";
-        String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
-
-        String username = "root";
-        String password = "root";
-        Connection connection = DriverManager.getConnection(url, username, password);
-
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void rollback(Connection connection) throws SQLException {
-        connection.rollback();
-    }
-
-    public void close(Connection connection) throws SQLException {
-        connection.close();
-    }
 }
