@@ -67,7 +67,7 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="MAIN_CLASS_NAME" value="principal.revisao.Main" />
-      <module name="Revisao" />
+      <module name="Mercearia" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,6 +88,7 @@
       <workItem from="1575034565886" duration="57000" />
       <workItem from="1575247393895" duration="590000" />
       <workItem from="1575575273621" duration="6568000" />
+      <workItem from="1575667536365" duration="296000" />
     </task>
     <servers />
   </component>
